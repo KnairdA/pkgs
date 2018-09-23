@@ -11,6 +11,8 @@ let
     oomox-gtk-theme            = callPackage ./pkgs/oomox-gtk-theme { };
     oomox-archdroid-icon-theme = callPackage ./pkgs/oomox-archdroid-icon-theme { };
 
+    KaTeX = callPackage ./pkgs/KaTeX { };
+
     InputXSLT  = callPackage ./pkgs/xslt/InputXSLT { };
     StaticXSLT = callPackage ./pkgs/xslt/StaticXSLT { };
     BuildXSLT  = callPackage ./pkgs/xslt/BuildXSLT { };
