@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub, cmake, boost, xalanc, xercesc, discount }:
 
 stdenv.mkDerivation rec {
-  name = "InputXSLT";
+  name = "input-xslt";
 
   src = fetchFromGitHub {
     owner = "KnairdA";

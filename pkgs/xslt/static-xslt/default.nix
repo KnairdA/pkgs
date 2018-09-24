@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  name = "StaticXSLT";
+  name = "static-xslt";
 
   src = fetchFromGitHub {
     owner = "KnairdA";
