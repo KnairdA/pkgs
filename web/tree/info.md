@@ -1,3 +1,5 @@
+# Nix package repository
+
 Custom [Nix](https://nixos.org/nix/) derivations describing how to build [projects](https://tree.kummerlaender.eu/projects) of mine as well as various software used by my [NixOS](https://code.kummerlaender.eu/adrian/nixos_system) [system](https://code.kummerlaender.eu/adrian/nixos_home).
 
 ## Usage
