@@ -11,8 +11,8 @@ let
 
     modem-manager-gui = callPackage ./pkgs/modem-manager-gui { };
 
-    oomox-gtk-theme            = callPackage ./pkgs/oomox-gtk-theme { };
-    oomox-archdroid-icon-theme = callPackage ./pkgs/oomox-archdroid-icon-theme { };
+    oomox-gtk-theme            = t : callPackage ./pkgs/oomox-gtk-theme { theme = t; };
+    oomox-archdroid-icon-theme = c : callPackage ./pkgs/oomox-archdroid-icon-theme { color = c; };
 
     katex-wrapper = callPackage ./pkgs/katex-wrapper { };
 
