@@ -2,6 +2,8 @@
 
 Custom [Nix](https://nixos.org/nix/) derivations describing how to build [projects](https://tree.kummerlaender.eu/projects) of mine as well as various software used by my [NixOS](https://code.kummerlaender.eu/adrian/nixos_system) [system](https://code.kummerlaender.eu/adrian/nixos_home).
 
+Individual derivations are available on [code.kummerlaender.eu](https://code.kummerlaender.eu/adrian/pkgs/).
+
 ## Usage
 
 Installing e.g. my XSLT based [static site generator](https://tree.kummerlaender.eu/projects/xslt) is as simple as:
@@ -14,6 +16,7 @@ Alternatively one may add _pkgs.kummerlaender.eu_ as a Nix channel:
 
 ```sh
 nix-channel --add https://pkgs.kummerlaender.eu/nixexprs.tar.gz mypkgs
+nix-channel --update
 nix-env -iA mypkgs.InputXSLT
 ```
 
