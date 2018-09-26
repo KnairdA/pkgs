@@ -6,7 +6,8 @@ let
   callPackage = pkgs.lib.callPackageWith (pkgs // custom);
 
   custom = {
-    custom-vim = callPackage ./pkgs/custom-vim { };
+    custom-vim    = callPackage ./pkgs/custom-vim    { };
+    custom-neovim = callPackage ./pkgs/custom-neovim { };
 
     modem-manager-gui = callPackage ./pkgs/modem-manager-gui { };
 
