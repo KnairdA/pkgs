@@ -41,7 +41,10 @@ in pkgs.writeTextFile {
     });
 
     process.stdin.on("end", function() {
-        var options = { displayMode: args.indexOf("--display-mode") !== -1 };
+        var options = {
+            displayMode: args.indexOf("--display-mode") !== -1,
+            throwOnError: false
+        };
         var output = katex.renderToString(input, options);
         console.log(output);
     });
