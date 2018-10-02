@@ -15,8 +15,8 @@ nix-env -f "https://pkgs.kummerlaender.eu/nixexprs.tar.gz" -iA make-xslt
 Alternatively one may add _pkgs.kummerlaender.eu_ as a Nix channel:
 
 ```sh
-nix-channel --add https://pkgs.kummerlaender.eu/nixexprs.tar.gz mypkgs
-nix-channel --update
+nix-channel --add https://pkgs.kummerlaender.eu mypkgs
+nix-channel --update mypkgs
 nix-env -iA mypkgs.InputXSLT
 ```
 
