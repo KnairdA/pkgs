@@ -17,7 +17,7 @@ Alternatively one may add _pkgs.kummerlaender.eu_ as a Nix channel:
 ```sh
 nix-channel --add https://pkgs.kummerlaender.eu mypkgs
 nix-channel --update mypkgs
-nix-env -iA mypkgs.InputXSLT
+nix-env -iA mypkgs.input-xslt
 ```
 
 ## Packages
