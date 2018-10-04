@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
     owner = "KnairdA";
     repo = "InputXSLT";
     rev = "master";
-    sha256 = "1j9fld3sh1jyscnsx6ab9jn5x6q67rjh9p3bgsh5na1qrs40dql0";
+    sha256 = "1pjhq1jjfdhd0k3fckvir465l34wkbvqp47r7r6qdd93fg6kw3x8";
   };
 
   buildInputs = [ cmake boost xalanc xercesc discount ];
