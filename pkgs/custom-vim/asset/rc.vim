@@ -54,7 +54,8 @@ autocmd FileType racket  setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType haskell setlocal shiftwidth=2 tabstop=4 softtabstop=2 shiftround expandtab
 autocmd FileType pandoc  setlocal nonumber autoread
 autocmd FileType pandoc  let      g:airline#extensions#whitespace#checks=['indent', 'trailing', 'long']
-autocmd FileType tex     set      conceallevel=2
+
+autocmd BufNewFile,BufRead *.tikz setlocal syntax=tex
 
 nnoremap <C-Tab>   :bnext<CR>
 nnoremap <C-S-Tab> :bprev<CR>
