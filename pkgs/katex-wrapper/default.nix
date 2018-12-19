@@ -5,8 +5,8 @@ let
     name = "katex-src";
 
     src = pkgs.fetchzip {
-      url    = "https://github.com/Khan/KaTeX/releases/download/v0.10.0-alpha/katex.zip";
-      sha256 = "002dzyf3wcyjxv4m6vv0v99gf82a9k7rxsnlvf93h9fhcda2vj7l";
+      url    = "https://github.com/KaTeX/KaTeX/releases/download/v0.10.0/katex.tar.gz";
+      sha256 = "0knmbzpqikw8iafsxnar96kxp0z0vdxng9bfzzrvqkbsxfs59cfy";
     };
 
     buildInputs = [ pkgs.nodejs ];
