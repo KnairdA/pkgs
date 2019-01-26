@@ -36,6 +36,7 @@ stdenv.mkDerivation rec {
     GRADIENT=${toString gradient}
     ROUNDNESS=${toString roundness}
     SPACING=${toString spacing}
+    GTK2_HIDPI=${if gtk2_hidpi then "True" else "False"}
   '';
 
   postPatch = ''
