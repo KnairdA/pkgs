@@ -9,8 +9,6 @@ let
     custom-vim    = callPackage ./pkgs/custom-vim    { };
     custom-neovim = callPackage ./pkgs/custom-neovim { };
 
-    modem-manager-gui = callPackage ./pkgs/modem-manager-gui { };
-
     oomox-gtk-theme            = t : callPackage ./pkgs/oomox-gtk-theme { theme = t; };
     oomox-archdroid-icon-theme = c : callPackage ./pkgs/oomox-archdroid-icon-theme { color = c; };
 

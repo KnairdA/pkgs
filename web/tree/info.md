@@ -35,7 +35,6 @@ Configurations of my own:
 
 Projects neither of my own nor of my configuration:
 
-* [modem-manger-gui](https://linuxonly.ru/page/modem-manager-gui)
 * [oomox-archdroid-icon-theme](https://github.com/themix-project/oomox)
 * [oomox-gtk-theme](https://github.com/themix-project/oomox)
 * [katex-wrapper](https://code.kummerlaender.eu/pkgs/tree/pkgs/katex-wrapper/default.nix)
