@@ -40,21 +40,12 @@ in {
     };
   };
 
-  "vim-git-commit-viewer" = buildVimPlugin {
-    name = "vim-git-commit-viewer";
-    src  = fetchgit {
-      url    = "https://github.com/junegunn/gv.vim";
-      rev    = "7ee1ca8201a0e9f95ba5dd3ec344e3ce71d61d8e";
-      sha256 = "0r0j8l0sm3xgb3hgmf0zm48mgj97nlkspg3jgv817nhwsl8pyc44";
-    };
-  };
-
   "vim-far" = buildVimPlugin {
     name = "vim-far";
     src = fetchgit {
       url    = "https://github.com/brooth/far.vim.git";
-      rev    = "5f8016e1df98b1f806e6347728dc012ae59579ab";
-      sha256 = "15pcsd039srfvrj2a6f3ns8zh13vrbdx93pcyxzxd8i0vidshkmb";
+      rev    = "0382845a87abd89d169a2fd8eb88c5a2241d496c";
+      sha256 = "1sk5hz73fglhn7g8p9m2a6gx49l2zndv9hav1zna903adsz8abfp";
     };
   };
 
@@ -62,8 +53,8 @@ in {
     name = "vim-wordmotion";
     src = fetchgit {
       url    = "https://github.com/chaoren/vim-wordmotion.git";
-      rev    = "d8cd124a6e36f38f52a43cb9f144eddbc03d300f";
-      sha256 = "04ag0ilv8v5h823p685aic9rm8b1l44cs4j5xx4zv1ljg95fx68n";
+      rev    = "e0a7bc3a27802803788741802113ff2781235951";
+      sha256 = "1k1mlhy9z96wx3l4ijvndm3d9il82qg8xgawck4sc0hr7yxvg4ap";
     };
   };
 
@@ -71,8 +62,8 @@ in {
     name = "vim-gina";
     src = fetchgit {
       url    = "https://github.com/lambdalisue/gina.vim.git";
-      rev    = "v0.3.2";
-      sha256 = "06m9cb04qsk49jri3cyw1gr3q71r048pzym10zlqgzsl1jsnvalv";
+      rev    = "v1.0.0";
+      sha256 = "0dd8kn54a17qi73namkbdw0gaskddy9krhrzcqp6x9cjinvjyrhv";
     };
   };
 
