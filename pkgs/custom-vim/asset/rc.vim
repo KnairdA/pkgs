@@ -127,3 +127,4 @@ let g:localvimrc_sandbox    = 0
 let g:localvimrc_persistent = 2
 
 let g:wordmotion_prefix = '<Leader>'
+nmap <S-w> <Leader>w
