@@ -28,7 +28,7 @@ in
       # editing enhancements
         "vim-wordmotion"
         "vim-autoformat"
-        "surround"
+        "vim-sandwich"
         "vim-unimpaired"
         "vim-far"
       # git integration

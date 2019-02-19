@@ -67,6 +67,15 @@ in {
     };
   };
 
+  "vim-sandwich" = buildVimPlugin {
+    name = "vim-sandwich";
+    src = fetchgit {
+      url    = "https://github.com/machakann/vim-sandwich.git";
+      rev    = "d441cf5a450f65dbf95eca3fa1138806884a7d58";
+      sha256 = "1qkadkisfw21834848rphliry5h6h9mj010n2p3y27wp6xkq9phj";
+    };
+  };
+
   "vim-color-akr" = buildVimPlugin {
     name = "vim-color-akr";
     src  = ./asset/vim-color-akr;
