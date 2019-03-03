@@ -128,3 +128,17 @@ let g:localvimrc_persistent = 2
 
 let g:wordmotion_prefix = '<Leader>'
 nmap <S-w> <Leader>w
+
+" spinning up a language client only makes
+" sense if such a client is available
+if executable('cquery')
+	let g:LanguageClient_serverCommands = { 'cpp': ['cquery'] }
+	let g:LanguageClient_hoverPreview = "Never"
+
+	set completefunc=LanguageClient#complete
+	set completeopt-=preview
+
+	inoremap <C-n> <C-x><C-o>
+	" allow completion selection via CR without inserting a new line
+	imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+endif
