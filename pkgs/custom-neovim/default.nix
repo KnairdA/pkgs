@@ -15,6 +15,8 @@ in pkgs.neovim.override {
         goyo
 
       # autocomplete
+        fzfWrapper
+        fzf-vim
         LanguageClient-neovim
         deoplete-nvim
 
@@ -27,7 +29,6 @@ in pkgs.neovim.override {
         vim-addon-nix
 
       # file, buffer management
-        ctrlp
         vim-counterpoint
         vim-signature
 

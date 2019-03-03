@@ -111,15 +111,10 @@ nnoremap <F6> :GitGutterToggle<CR>
 nnoremap <F7> :SignatureToggleSigns<CR>
 nnoremap <F8> :Goyo<CR>
 
-nnoremap <c-b> :CtrlPBuffer<CR>
-nnoremap <c-m> :CtrlPMixed<CR>
-nnoremap <c-t> :CtrlPTag<CR>
-nnoremap <a-t> :CtrlPBufTag<CR>
-
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\.git$',
-\ 'file': '\.o$\|\.d$'
-\ }
+nnoremap <c-p> :GFiles<CR>
+nnoremap <c-b> :Buffers<CR>
+nnoremap <c-t> :Tags<CR>
+nnoremap <a-t> :BTags<CR>
 
 let g:undotree_SetFocusWhenToggle = 1
 
@@ -132,7 +127,9 @@ nmap <S-w> <Leader>w
 " spinning up a language client only makes
 " sense if such a client is available
 if executable('cquery')
-	let g:LanguageClient_serverCommands = { 'cpp': ['cquery'] }
+	let g:LanguageClient_serverCommands = { 'cpp': [
+\		'cquery', '--init={"cacheDirectory":"/tmp/cquery/", "completion": {"filterAndSort": false}}'
+\	] }
 	let g:LanguageClient_hoverPreview = "Never"
 
 	set completefunc=LanguageClient#complete
@@ -141,4 +138,13 @@ if executable('cquery')
 	inoremap <C-n> <C-x><C-o>
 	" allow completion selection via CR without inserting a new line
 	imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+	noremap <leader>lc   :call LanguageClient_contextMenu()<CR>
+	noremap <leader>lr   :call LanguageClient_rename()<CR>
+	nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+	nnoremap <silent> gt :call LanguageClient#textDocument_typeDefinition()<CR>
+	nnoremap <silent> gi :call LanguageClient#textDocument_implementation()<CR>
+
+	nmap <c-t> :call LanguageClient#workspace_symbol()<CR>
+	nmap <a-t> :call LanguageClient#textDocument_documentSymbol()<CR>
 endif
