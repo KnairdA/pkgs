@@ -1,12 +1,9 @@
-{ system ? builtins.currentSystem }:
+{ system ? builtins.currentSystem, pkgs ? import <nixpkgs> { inherit system; }, ... }:
 
 let
-  pkgs = import <nixpkgs> { inherit system; };
-
   callPackage = pkgs.lib.callPackageWith (pkgs // custom);
 
   custom = {
-    custom-vim    = callPackage ./pkgs/custom-vim    { };
     custom-neovim = callPackage ./pkgs/custom-neovim { };
 
     oomox-gtk-theme            = t : callPackage ./pkgs/oomox-gtk-theme { theme = t; };

@@ -31,7 +31,7 @@ Projects of my own:
 
 Configurations of my own:
 
-* [custom-vim](https://code.kummerlaender.eu/pkgs/tree/pkgs/custom-vim)
+* [custom-neovim](https://code.kummerlaender.eu/pkgs/tree/pkgs/custom-neovim)
 
 Projects neither of my own nor of my configuration:
 

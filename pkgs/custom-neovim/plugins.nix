@@ -4,7 +4,7 @@ let
   buildVimPlugin = pkgs.vimUtils.buildVimPluginFrom2Nix;
 in {
 
-  "vim-unimpaired" = buildVimPlugin {
+  vim-unimpaired = buildVimPlugin {
     name = "vim-unimpaired";
     src  = fetchgit {
       url    = "https://github.com/tpope/vim-unimpaired";
@@ -13,7 +13,7 @@ in {
     };
   };
 
-  "vim-counterpoint" = buildVimPlugin {
+  vim-counterpoint = buildVimPlugin {
     name = "vim-counterpoint";
     src  = fetchgit {
       url    = "https://github.com/jpetrie/vim-counterpoint";
@@ -22,7 +22,7 @@ in {
     };
   };
 
-  "vim-mundo" = buildVimPlugin {
+  vim-mundo = buildVimPlugin {
     name = "vim-mundo";
     src  = fetchgit {
       url    = "https://github.com/simnalamburt/vim-mundo";
@@ -31,7 +31,7 @@ in {
     };
   };
 
-  "vim-toggle-ui-elements" = buildVimPlugin {
+  vim-toggle-ui-elements = buildVimPlugin {
     name = "vim-toggle-ui-elements";
     src  = fetchgit {
       url    = "https://github.com/muellan/vim-toggle-ui-elements";
@@ -40,8 +40,8 @@ in {
     };
   };
 
-  "vim-far" = buildVimPlugin {
-    name = "vim-far";
+  far = buildVimPlugin {
+    name = "far";
     src = fetchgit {
       url    = "https://github.com/brooth/far.vim.git";
       rev    = "0382845a87abd89d169a2fd8eb88c5a2241d496c";
@@ -49,7 +49,7 @@ in {
     };
   };
 
-  "vim-wordmotion" = buildVimPlugin {
+  vim-wordmotion = buildVimPlugin {
     name = "vim-wordmotion";
     src = fetchgit {
       url    = "https://github.com/chaoren/vim-wordmotion.git";
@@ -58,8 +58,8 @@ in {
     };
   };
 
-  "vim-gina" = buildVimPlugin {
-    name = "vim-gina";
+  gina = buildVimPlugin {
+    name = "gina";
     src = fetchgit {
       url    = "https://github.com/lambdalisue/gina.vim.git";
       rev    = "v1.0.0";
@@ -67,7 +67,7 @@ in {
     };
   };
 
-  "vim-sandwich" = buildVimPlugin {
+  vim-sandwich = buildVimPlugin {
     name = "vim-sandwich";
     src = fetchgit {
       url    = "https://github.com/machakann/vim-sandwich.git";
@@ -76,7 +76,7 @@ in {
     };
   };
 
-  "vim-color-akr" = buildVimPlugin {
+  vim-color-akr = buildVimPlugin {
     name = "vim-color-akr";
     src  = ./asset/vim-color-akr;
   };
