@@ -19,6 +19,7 @@ in pkgs.neovim.override {
         fzf-vim
         LanguageClient-neovim
         deoplete-nvim
+        denite
 
       # load project specific config
         vim-localvimrc

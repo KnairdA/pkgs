@@ -37,6 +37,7 @@ let mapleader=","
 map <leader>s  :let @/=""<CR>
 map <leader>c  zz
 map <leader>d  <c-]>
+map <leader>h  q:
 
 nmap <backspace> :e#<CR>
 nmap f           za
@@ -49,6 +50,7 @@ autocmd InsertEnter *   :setlocal nohlsearch
 autocmd InsertLeave *   :setlocal hlsearch
 
 autocmd FileType scheme  setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType nix     setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType lisp    setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType racket  setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType haskell setlocal shiftwidth=2 tabstop=4 softtabstop=2 shiftround expandtab
@@ -127,9 +129,7 @@ nmap <S-w> <Leader>w
 " spinning up a language client only makes
 " sense if such a client is available
 if executable('cquery')
-	let g:LanguageClient_serverCommands = { 'cpp': [
-\		'cquery', '--init={"cacheDirectory":"/tmp/cquery/", "completion": {"filterAndSort": false}}'
-\	] }
+	let g:LanguageClient_serverCommands = { 'cpp': [ 'cquery' ] }
 	let g:LanguageClient_hoverPreview = "Never"
 
 	set completefunc=LanguageClient#complete
@@ -145,6 +145,6 @@ if executable('cquery')
 	nnoremap <silent> gt :call LanguageClient#textDocument_typeDefinition()<CR>
 	nnoremap <silent> gi :call LanguageClient#textDocument_implementation()<CR>
 
-	nmap <c-t> :call LanguageClient#workspace_symbol()<CR>
-	nmap <a-t> :call LanguageClient#textDocument_documentSymbol()<CR>
+	nmap <c-t> :Denite workspaceSymbol<CR>
+	nmap <a-t> :Denite documentSymbol<CR>
 endif
