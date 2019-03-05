@@ -76,6 +76,24 @@ in {
     };
   };
 
+  vim-lsp = buildVimPlugin {
+    name = "vim-lsp";
+    src = fetchgit {
+      url    = "https://github.com/prabirshrestha/vim-lsp.git";
+      rev    = "0310241af11adc6c3a7ba93955bc27b15744c957";
+      sha256 = "0ccd6is75qlk8mg9wpwp1ypq68p7lgbq1c1jbpr6pwr59s53r4lx";
+    };
+  };
+
+  async = buildVimPlugin {
+    name = "async";
+    src = fetchgit {
+      url    = "https://github.com/prabirshrestha/async.vim.git";
+      rev    = "f3014550d7a799097e56b094104dd2cd66cf2612";
+      sha256 = "0zn25qwycynagrij5rsp1x7kbfz612gn7xda0hvm4y7qr3pal77p";
+    };
+  };
+
   vim-color-akr = buildVimPlugin {
     name = "vim-color-akr";
     src  = ./asset/vim-color-akr;

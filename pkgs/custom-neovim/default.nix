@@ -17,9 +17,7 @@ in pkgs.neovim.override {
       # autocomplete
         fzfWrapper
         fzf-vim
-        LanguageClient-neovim
-        deoplete-nvim
-        denite
+        async vim-lsp
 
       # load project specific config
         vim-localvimrc

@@ -126,25 +126,29 @@ let g:localvimrc_persistent = 2
 let g:wordmotion_prefix = '<Leader>'
 nmap <S-w> <Leader>w
 
+let g:lsp_auto_enable = 0
+
 " spinning up a language client only makes
 " sense if such a client is available
 if executable('cquery')
-	let g:LanguageClient_serverCommands = { 'cpp': [ 'cquery' ] }
-	let g:LanguageClient_hoverPreview = "Never"
+	let g:lsp_auto_enable = 1
 
-	set completefunc=LanguageClient#complete
-	set completeopt-=preview
+	autocmd User lsp_setup call lsp#register_server({
+		\ 'name': 'cquery',
+		\ 'cmd': {server_info->['cquery']},
+		\ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+		\ 'initialization_options': { 'cacheDirectory': '/tmp/cquery' },
+		\ 'whitelist': ['c', 'cpp', 'cc'],
+		\ })
 
-	inoremap <C-n> <C-x><C-o>
-	" allow completion selection via CR without inserting a new line
-	imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+	nnoremap <silent> gd :LspDefinition<CR>
+	nnoremap <silent> gt :LspTypeDefinition<CR>
+	nnoremap <silent> gi :LspImplementation<CR>
+	nnoremap <silent> gr :LspReferences<CR>
 
-	noremap <leader>lc   :call LanguageClient_contextMenu()<CR>
-	noremap <leader>lr   :call LanguageClient_rename()<CR>
-	nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-	nnoremap <silent> gt :call LanguageClient#textDocument_typeDefinition()<CR>
-	nnoremap <silent> gi :call LanguageClient#textDocument_implementation()<CR>
+	nmap <c-t> :LspWorkspaceSymbol<CR>
+	nmap <a-t> :LspDocumentSymbol<CR>
 
-	nmap <c-t> :Denite workspaceSymbol<CR>
-	nmap <a-t> :Denite documentSymbol<CR>
+	autocmd FileType cpp setlocal omnifunc=lsp#complete
+	inoremap <C-m> <C-x><C-o>
 endif
