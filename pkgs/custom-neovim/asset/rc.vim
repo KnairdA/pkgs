@@ -145,10 +145,23 @@ if executable('cquery')
 	nnoremap <silent> gt :LspTypeDefinition<CR>
 	nnoremap <silent> gi :LspImplementation<CR>
 	nnoremap <silent> gr :LspReferences<CR>
-
-	nmap <c-t> :LspWorkspaceSymbol<CR>
-	nmap <a-t> :LspDocumentSymbol<CR>
+	nnoremap <c-t> :LspWorkspaceSymbol<CR>
+	nnoremap <a-t> :LspDocumentSymbol<CR>
 
 	autocmd FileType cpp setlocal omnifunc=lsp#complete
+	set completeopt=longest,menuone,preview
+	" use enter to select completion item
+	inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+	" improve popup and selection behavior
+	inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+		\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+	inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+		\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+	" trigger omnicompletion using <C-m> (compared to <C-n> for plain completion)
 	inoremap <C-m> <C-x><C-o>
+
+	" close documentation buffer after selecting a completion item
+	autocmd CompleteDone * silent! pclose
+	" close quickfix buffer after selection
+	autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
 endif
