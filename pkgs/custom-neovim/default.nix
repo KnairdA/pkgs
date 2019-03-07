@@ -17,7 +17,7 @@ in pkgs.neovim.override {
       # autocomplete
         fzfWrapper
         fzf-vim
-        async vim-lsp
+        vim-gutentags
 
       # load project specific config
         vim-localvimrc

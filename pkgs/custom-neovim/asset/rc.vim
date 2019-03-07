@@ -36,8 +36,8 @@ let mapleader=","
 
 map <leader>s  :let @/=""<CR>
 map <leader>c  zz
-map <leader>d  <c-]>
 map <leader>h  q:
+map <leader>d  g<C-]>
 
 nmap <backspace> :e#<CR>
 nmap f           za
@@ -123,45 +123,5 @@ let g:undotree_SetFocusWhenToggle = 1
 let g:localvimrc_sandbox    = 0
 let g:localvimrc_persistent = 2
 
-let g:wordmotion_prefix = '<Leader>'
-nmap <S-w> <Leader>w
-
-let g:lsp_auto_enable = 0
-
-" spinning up a language client only makes
-" sense if such a client is available
-if executable('cquery')
-	let g:lsp_auto_enable = 1
-
-	autocmd User lsp_setup call lsp#register_server({
-		\ 'name': 'cquery',
-		\ 'cmd': {server_info->['cquery']},
-		\ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-		\ 'initialization_options': { 'cacheDirectory': '/tmp/cquery' },
-		\ 'whitelist': ['c', 'cpp', 'cc'],
-		\ })
-
-	nnoremap <silent> gd :LspDefinition<CR>
-	nnoremap <silent> gt :LspTypeDefinition<CR>
-	nnoremap <silent> gi :LspImplementation<CR>
-	nnoremap <silent> gr :LspReferences<CR>
-	nnoremap <c-t> :LspWorkspaceSymbol<CR>
-	nnoremap <a-t> :LspDocumentSymbol<CR>
-
-	autocmd FileType cpp setlocal omnifunc=lsp#complete
-	set completeopt=longest,menuone,preview
-	" use enter to select completion item
-	inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-	" improve popup and selection behavior
-	inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-		\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-	inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-		\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-	" trigger omnicompletion using <C-m> (compared to <C-n> for plain completion)
-	inoremap <C-m> <C-x><C-o>
-
-	" close documentation buffer after selecting a completion item
-	autocmd CompleteDone * silent! pclose
-	" close quickfix buffer after selection
-	autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
-endif
+let g:wordmotion_prefix = '<leader>'
+nmap <S-w> <leader>w
