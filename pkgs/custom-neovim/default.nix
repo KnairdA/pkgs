@@ -44,6 +44,7 @@ in pkgs.neovim.override {
       # git integration
         vim-gitgutter
         gina
+        fugitive
 
       ];
     };
