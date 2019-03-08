@@ -1,22 +1,24 @@
 syntax enable
 filetype plugin indent on
 
-colorscheme akr
-
 set encoding=utf-8
 set showcmd
 set nocompatible
 set nocursorline
 set number
-set lazyredraw
-set ttyfast
 set mouse=a
-set t_Co=256
 set shell=/bin/sh
 set sessionoptions-=options
+set termguicolors
 
+colorscheme akr
+
+" do not update screen during macro execution
+set lazyredraw
+
+" global swap
 set directory=~/.vim/swap//,.
-
+" permanent undo
 set undofile
 set undodir=~/.vim/undo
 
@@ -32,6 +34,8 @@ set smartcase
 
 set wildchar=<Tab> wildmenu wildmode=full
 
+set noautoread
+
 let mapleader=","
 
 map <leader>s  :let @/=""<CR>
@@ -42,9 +46,6 @@ map <leader>d  g<C-]>
 nmap <backspace> :e#<CR>
 nmap f           za
 nmap F           zA
-
-" disable to override default on neovim
-set noautoread
 
 autocmd InsertEnter *   :setlocal nohlsearch
 autocmd InsertLeave *   :setlocal hlsearch
@@ -59,34 +60,46 @@ autocmd FileType pandoc  let      g:airline#extensions#whitespace#checks=['inden
 
 autocmd BufNewFile,BufRead *.tikz setlocal syntax=tex
 
-nnoremap <C-Tab>   :bnext<CR>
-nnoremap <C-S-Tab> :bprev<CR>
-
 " select previous line on file reload, useful when cycling file extensions
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\" zz" | endif
 nnoremap <Tab> :CounterpointNext<CR>
 nnoremap <S-Tab> :CounterpointPrevious<CR>
 
-nnoremap <C-left>  gT
-nnoremap <C-right> gt
-nnoremap <space> @q
+" block jumping
 nnoremap J }
 nnoremap K {
 
+"" selection / current line shifting
+" vertical shifting
+nmap <Up>   [e
+nmap <Down> ]e
+vmap <Up>   [egv
+vmap <Down> ]egv
+" horizontal shifting via indentation
 nmap <Left>  <<
 nmap <Right> >>
 vmap <Left>  <gv
 vmap <Right> >gv
 
-nmap <Up>   [e
-nmap <Down> ]e
-vmap <Up>   [egv
-vmap <Down> ]egv
+" buffer cycling
+nnoremap <C-Tab>   :bnext<CR>
+nnoremap <C-S-Tab> :bprev<CR>
 
-nnoremap <A-left>  <C-W>h
-nnoremap <A-right> <C-W>l
-nnoremap <A-up>    <C-W>k
-nnoremap <A-down>  <C-W>j
+"" switching between viewports
+" tabs
+nnoremap <C-j> gt
+nnoremap <C-k> gT
+" splits
+nnoremap <A-h> <C-W>h
+nnoremap <A-l> <C-W>l
+nnoremap <A-k> <C-W>k
+nnoremap <A-j> <C-W>j
+
+" quick execution of the q macro
+" (i.e. qq to record, q to stop, space to execute)
+nnoremap <space> @q
+
+"" plugin config
 
 set laststatus=2
 let g:airline_theme                                   = 'akr'
@@ -125,3 +138,9 @@ let g:localvimrc_persistent = 2
 
 let g:wordmotion_prefix = '<leader>'
 nmap <S-w> <leader>w
+
+let g:gutentags_enabled = 0
+
+if executable('ctags')
+	let g:gutentags_enabled = 1
+end
