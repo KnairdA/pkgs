@@ -39,6 +39,7 @@ in pkgs.neovim.override {
         vim-wordmotion
         vim-autoformat
         vim-sandwich
+        tabular
         far
 
       # git integration
