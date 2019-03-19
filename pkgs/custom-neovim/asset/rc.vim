@@ -82,8 +82,8 @@ vmap <Left>  <gv
 vmap <Right> >gv
 
 " buffer cycling
-nnoremap <C-Tab>   :bnext<CR>
-nnoremap <C-S-Tab> :bprev<CR>
+nnoremap <A-Tab>   :bnext<CR>
+nnoremap <A-S-Tab> :bprev<CR>
 
 "" switching between viewports
 " tabs
@@ -126,10 +126,10 @@ nnoremap <F6> :GitGutterToggle<CR>
 nnoremap <F7> :SignatureToggleSigns<CR>
 nnoremap <F8> :Goyo<CR>
 
-nnoremap <c-p> :GFiles<CR>
-nnoremap <c-b> :Buffers<CR>
-nnoremap <c-t> :Tags<CR>
-nnoremap <a-t> :BTags<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-t> :Tags<CR>
+nnoremap <A-t> :BTags<CR>
 
 let g:undotree_SetFocusWhenToggle = 1
 
