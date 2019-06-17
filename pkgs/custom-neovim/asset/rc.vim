@@ -54,6 +54,8 @@ autocmd FileType scheme  setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType nix     setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType lisp    setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType racket  setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType python  setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType mako    setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType haskell setlocal shiftwidth=2 tabstop=4 softtabstop=2 shiftround expandtab
 autocmd FileType pandoc  setlocal nonumber autoread
 autocmd FileType pandoc  let      g:airline#extensions#whitespace#checks=['indent', 'trailing', 'long']
