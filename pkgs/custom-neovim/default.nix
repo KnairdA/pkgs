@@ -41,6 +41,7 @@ in pkgs.neovim.override {
         vim-sandwich
         tabular
         far
+        ultisnips
 
       # git integration
         vim-gitgutter
