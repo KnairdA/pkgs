@@ -60,6 +60,7 @@ autocmd FileType haskell setlocal shiftwidth=2 tabstop=4 softtabstop=2 shiftroun
 autocmd FileType pandoc  setlocal nonumber autoread
 autocmd FileType pandoc  let      g:airline#extensions#whitespace#checks=['indent', 'trailing', 'long']
 autocmd FileType tex     setlocal noai nocin nosi inde=
+autocmd FileType mako    setlocal noai nocin nosi inde=
 
 autocmd BufNewFile,BufRead *.tikz setlocal syntax=tex
 
