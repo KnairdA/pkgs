@@ -153,3 +153,6 @@ let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 
 let g:UltiSnipsSnippetDirectories = [$PWD.'/.lvimsnip', $HOME.'/.config/nvim/snip']
+
+let g:mako_detect_lang_from_ext = 0 " breaks on too heavily nested file extensions
+let g:mako_default_outer_lang = 'txt'
