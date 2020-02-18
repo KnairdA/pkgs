@@ -15,5 +15,7 @@ let
     build-xslt  = callPackage ./pkgs/xslt/build-xslt  { };
     static-xslt = callPackage ./pkgs/xslt/static-xslt { };
     make-xslt   = callPackage ./pkgs/xslt/make-xslt   { };
+
+    persistent-nix-shell = callPackage ./pkgs/persistent-nix-shell { };
   };
 in custom

@@ -32,6 +32,7 @@ Projects of my own:
 Configurations of my own:
 
 * [custom-neovim](https://code.kummerlaender.eu/pkgs/tree/pkgs/custom-neovim)
+* [persistent-nix-shell](https://code.kummerlaender.eu/pkgs/tree/pkgs/persistent-nix-shell)
 
 Projects neither of my own nor of my configuration:
 
