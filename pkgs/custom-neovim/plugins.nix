@@ -40,15 +40,6 @@ in {
     };
   };
 
-  far = buildVimPlugin {
-    name = "far";
-    src = fetchgit {
-      url    = "https://github.com/brooth/far.vim.git";
-      rev    = "0382845a87abd89d169a2fd8eb88c5a2241d496c";
-      sha256 = "1sk5hz73fglhn7g8p9m2a6gx49l2zndv9hav1zna903adsz8abfp";
-    };
-  };
-
   vim-wordmotion = buildVimPlugin {
     name = "vim-wordmotion";
     src = fetchgit {
@@ -73,6 +64,15 @@ in {
       url    = "https://github.com/machakann/vim-sandwich.git";
       rev    = "d441cf5a450f65dbf95eca3fa1138806884a7d58";
       sha256 = "1qkadkisfw21834848rphliry5h6h9mj010n2p3y27wp6xkq9phj";
+    };
+  };
+
+  vim-swoop = buildVimPlugin {
+    name = "vim-swoop";
+    src = fetchgit {
+      url    = "https://github.com/pelodelfuego/vim-swoop.git";
+      rev    = "99c9a7a40d34f89391fc0ac2a9f0260dd73a7d51";
+      sha256 = "1ghc8s5309pvc7w30jn1gm2qn0zfbkhm1nrdbk9d34zda4sq0jfv";
     };
   };
 

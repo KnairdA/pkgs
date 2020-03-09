@@ -39,8 +39,8 @@ in pkgs.neovim.override {
         vim-wordmotion
         vim-autoformat
         vim-sandwich
+        vim-swoop
         tabular
-        far
         ultisnips
 
       # git integration
