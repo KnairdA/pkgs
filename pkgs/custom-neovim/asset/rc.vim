@@ -37,6 +37,7 @@ set wildchar=<Tab> wildmenu wildmode=full
 set noautoread
 
 let mapleader=","
+let maplocalleader="-"
 
 map <leader>s  :let @/=""<CR>
 map <leader>c  zz
@@ -133,6 +134,7 @@ nnoremap <F8> :Goyo<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-t> :Tags<CR>
+nnoremap <C-l> :Lines<CR>
 nnoremap <A-t> :BTags<CR>
 
 let g:undotree_SetFocusWhenToggle = 1

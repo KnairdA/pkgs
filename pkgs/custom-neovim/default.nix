@@ -43,6 +43,10 @@ in pkgs.neovim.override {
         tabular
         ultisnips
 
+      # orgmode
+        vim-orgmode
+        SyntaxRange
+
       # git integration
         vim-gitgutter
         gina
