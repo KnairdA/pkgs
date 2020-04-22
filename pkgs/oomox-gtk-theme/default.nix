@@ -6,8 +6,8 @@ stdenv.mkDerivation rec {
   src = pkgs.fetchFromGitHub {
     repo   = "oomox-gtk-theme";
     owner  = "themix-project";
-    rev    = "34ad5fb42d2954f58057c63013ba318e6a476351";
-    sha256 = "1mch93igm54g4wj026rj04ir8l34li59fmcjrnwfwd49hsl8427j";
+    rev    = "0a307a5f5d7039b812132270a175ff018e0328e7";
+    sha256 = "0svdcjdxh7zicj9jv1drk29im7c880d0sp532fvgyj22cyd7fnxm";
   };
 
   nativeBuildInputs = with pkgs; [ librsvg glib libxml2 gdk_pixbuf bc sass sassc ];
