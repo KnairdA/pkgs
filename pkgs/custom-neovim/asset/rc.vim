@@ -134,6 +134,7 @@ nnoremap <F8> :Goyo<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-t> :Tags<CR>
+nnoremap <C-n> :call fzf#run({'source': 'find ~/org/*.org ~/journal/**/*.md -type f', 'sink':  'edit'})<CR>
 nnoremap <C-l> :Lines<CR>
 nnoremap <A-t> :BTags<CR>
 
