@@ -148,10 +148,6 @@ nmap <S-w> <leader>w
 
 let g:gutentags_enabled = 0
 
-if executable('ctags')
-	let g:gutentags_enabled = 1
-end
-
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 
