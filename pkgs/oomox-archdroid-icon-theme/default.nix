@@ -1,6 +1,6 @@
-{ stdenv, pkgs, color, ... }:
+{ pkgs, color, ... }:
 
-stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation rec {
   name = "oomox-archdroid-icon-theme";
 
   src = pkgs.fetchFromGitHub {
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   meta = {
     description = "oomox-archdroid-icon-theme is a customizable fork of archdroid-icon-theme";
     homepage = https://github.com/themix-project/archdroid-icon-theme;
-    license = stdenv.lib.licenses.gpl3;
-    platforms = stdenv.lib.platforms.all;
+    license = pkgs.stdenv.lib.licenses.gpl3;
+    platforms = pkgs.stdenv.lib.platforms.all;
   };
 }

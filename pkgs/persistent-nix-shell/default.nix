@@ -1,4 +1,4 @@
-{ stdenv, pkgs, ... }:
+{ pkgs, ... }:
 
 pkgs.writeShellScriptBin
   "persistent-nix-shell"

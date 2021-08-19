@@ -1,7 +1,7 @@
-{ stdenv, pkgs, ... }:
+{ pkgs, ... }:
 
 let
-  katex-src = stdenv.mkDerivation rec {
+  katex-src = pkgs.stdenv.mkDerivation rec {
     name = "katex-src";
 
     src = pkgs.fetchzip {
@@ -19,10 +19,11 @@ let
     meta = {
       description = "KaTeX";
       homepage    = https://github.com/Khan/KaTeX;
-      license     = stdenv.lib.licenses.mit;
-      platforms   = stdenv.lib.platforms.all;
+      license     = pkgs.stdenv.lib.licenses.mit;
+      platforms   = pkgs.stdenv.lib.platforms.all;
     };
   };
+
 in pkgs.writeTextFile {
   name        = "katex-wrapper";
   executable  = true;

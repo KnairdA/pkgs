@@ -1,9 +1,9 @@
-{ stdenv, fetchFromGitHub }:
+{ pkgs, ... }:
 
-stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation rec {
   name = "build-xslt";
 
-  src = fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "KnairdA";
     repo = "BuildXSLT";
     rev = "master";
@@ -15,9 +15,9 @@ stdenv.mkDerivation rec {
     cp -r * $out/
   '';
 
-  meta = with stdenv.lib; {
+  meta = with pkgs.stdenv.lib; {
     description = "BuildXSLT";
     homepage    = https://github.com/KnairdA/BuildXSLT/;
-    license     = stdenv.lib.licenses.mit;
+    license     = pkgs.stdenv.lib.licenses.mit;
   };
 }

@@ -1,6 +1,6 @@
-{ stdenv, pkgs, theme, ... }:
+{ pkgs, theme, ... }:
 
-stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation rec {
   name = "oomox-gtk-theme";
 
   src = pkgs.fetchFromGitHub {
@@ -55,7 +55,7 @@ stdenv.mkDerivation rec {
   meta = {
     description = "oomox-gtk-theme is a customizable fork of numix-gtk-theme.";
     homepage = https://github.com/themix-project/oomox-gtk-theme;
-    license = stdenv.lib.licenses.gpl3;
-    platforms = stdenv.lib.platforms.all;
+    license = pkgs.stdenv.lib.licenses.gpl3;
+    platforms = pkgs.stdenv.lib.platforms.all;
   };
 }

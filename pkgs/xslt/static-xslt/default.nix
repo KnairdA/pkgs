@@ -1,9 +1,9 @@
-{ stdenv, fetchFromGitHub }:
+{ pkgs, ... }:
 
-stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation rec {
   name = "static-xslt";
 
-  src = fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "KnairdA";
     repo  = "StaticXSLT";
     rev    = "0b84f519cb418d32c0fd62f9c6c852ee31f7c926";
@@ -15,9 +15,9 @@ stdenv.mkDerivation rec {
     cp -r * $out/
   '';
 
-  meta = with stdenv.lib; {
+  meta = with pkgs.stdenv.lib; {
     description = "StaticXSLT";
     homepage    = https://github.com/KnairdA/StaticXSLT/;
-    license     = stdenv.lib.licenses.mit;
+    license     = pkgs.stdenv.lib.licenses.mit;
   };
 }
